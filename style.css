@@ -1,0 +1,111 @@
+:root {
+  --clr-bg-900: #080808;
+  --clr-bg-300: #484548;
+  --clr-bg-100: #ffffff;
+  --clr-accent: #a59678;
+}
+*, 
+*::before, 
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3rem;
+}
+  
+.container {
+    width: 85%;
+    max-width: 1100px;
+    height: auto;
+    margin: 0 auto;
+    background-color: transparent;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#sign_up  {
+  padding: 3em 0;
+  text-align: center;;
+}
+
+.form_container {
+    max-width: 400px;
+    min-width: 300px;
+    outline: 2px solid var(--clr-accent);
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 300px;
+    box-shadow: 0 50px 50px -30px var(--clr-accent);
+}
+
+.button_one {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase; 
+    color: var(--clr-bg-300);
+    font-weight: 500;
+    background-color: var(--clr-bg-100);
+    padding: 0.5em 1em;
+    border-radius: 100px;
+    margin-top: 1em;
+    outline: 2px solid white;
+  }
+  
+  input[type=text] {
+    min-width: 200px;
+    max-width: 250px;
+    height: 40px;
+    padding: 0.75em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+    border-color: var(--clr-bg-200);
+  }  
+
+  input[type=email] {
+    min-width: 200px;
+    max-width: 250px;
+    height: 40px;
+    padding: 0.75em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+    border-color: var(--clr-bg-200);
+  }  
+  
+  .name__form:hover,
+  .email__form:hover, 
+  .message__form:hover {
+    outline: 3px solid var(--clr-bg-200);
+  }
+  
+  input[type=submit] {
+    height: 40px;
+    width: 150px;
+    text-decoration: none;
+    text-transform: uppercase; 
+    font-size: 1rem;
+    font-weight: 500;
+   
+    padding: 0.25em 0.75em;
+    border-radius: 12px;
+    border: none;
+  }
+  
+  input[type=submit]:hover {
+    opacity: 0.8;
+  }
+
+  .form + .form {
+    padding-top: 1em;
+  }

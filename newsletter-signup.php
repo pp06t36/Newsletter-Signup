@@ -29,24 +29,24 @@ $customer = [
 
   
 
-
+if(!$entryErr) {
   // Connect to database
-try {
-    $db = new PDO('mysql:host=127.0.0.1;dbname=databaseName', 'User', 'Pasword');
+    try {
+        $db = new PDO('mysql:host=localhost;dbname=newsletter', 'root', 'mysql');
 
-    
-    $db->prepare("
-    INSERT INTO newsletter (name, email, created_at) VALUES (:name, :email, :created_at)
-    ")->execute($customer);
+        
+        $db->prepare("
+        INSERT INTO newsletter (name, email, created_at) VALUES (:name, :email, :created_at)
+        ")->execute($customer);
 
-    header("Location: index.php?msg=success"); 
-} catch (PDOException $e) {
-    $err = $e->getMessage();
-    file_put_contents("error-log.txt", '[' . date("Y-m-d H:i:s") . '] ' . $err . "\n");
-    $errMsg = "Something went wrong.";
-    
+        header("Location: index.php?msg=success"); 
+    } catch (PDOException $e) {
+        $err = $e->getMessage();
+        file_put_contents("error-log.txt", '[' . date("Y-m-d H:i:s") . '] ' . $err . "\n");
+        $errMsg = "Something went wrong.";
+        
+    }
 }
-
 // Redirect browser
 if ( isset($entryErr)) header("Location: index.php?error=$entryErr"); 
 if(isset($errMsg)) header("Location: index.php?error=$errMsg"); 

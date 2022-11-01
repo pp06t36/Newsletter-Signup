@@ -1,4 +1,11 @@
-<!-- File name index.html -->
+<?php
+  if(isset($_GET['msg'])) {
+    $msg = "Success";
+  } elseif (isset($_GET['error'])) {
+    $msg = $_GET['error'];
+  }
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +24,7 @@
       <div class="container row">
         <h5 class="card-title">Newsletter</h5>
         <div class="form_container">
-          <form class="form-inline" action="/projects/newsletter_signup/newsletter-signup.php" method="post">
+          <form class="form-inline" action="newsletter-signup.php" method="post">
             <div class="form name_form">
               <input type="text" name="name" placeholder="Name.." required /> 
             </div>
@@ -29,5 +36,11 @@
         </div>
       </div>
     </section>
+    <script>
+      <?php
+        if(isset($msg))
+        echo "alert('$msg');";
+      ?>
+    </script>
   </body>
 </html>

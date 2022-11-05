@@ -40,6 +40,8 @@ if(!$entryErr) {
         ")->execute($customer);
 
         header("Location: index.php?msg=success"); 
+        exit();
+        
     } catch (PDOException $e) {
         $err = $e->getMessage();
         file_put_contents("error-log.txt", '[' . date("Y-m-d H:i:s") . '] ' . $err . "\n");
